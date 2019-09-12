@@ -71,9 +71,9 @@ class singledLinkedList
     
     void insertNodeAtPosition(int pos, int value)
     {   
-        if(pos == 1) insertNodeAtStart(value)
-        else if(pos == size) createNode(value)
-        else
+        if(pos == 1) insertNodeAtStart(value);
+        else if(pos == size+1) createNode(value);
+        else if(pos < size)
         {
             node* temp = new node;
             temp->data = value;
@@ -139,9 +139,9 @@ class singledLinkedList
     
     void deletePosition(int pos)
     {
-        if(pos == 1) deleteFirstNode(value)
-        else if(pos == size) deleteLastNode(value)
-        else
+        if(pos == 1) deleteFirstNode();
+        else if(pos == size+1) deleteLastNode();
+        else if(pos < size)
         {
             node* curr = head;
             node* prev;
@@ -162,10 +162,12 @@ class singledLinkedList
 int main()
 {
     singledLinkedList obj;
-    obj.createnode(25);
+    obj.createNode(25);
     
-    obj.insertPosition(5,60);
-    obj.display();
+    obj.insertNodeAtPosition(2,60);
+    
+    obj.displayList();
+    
     system("pause");
 	return 0;
     /*
@@ -209,5 +211,4 @@ int main()
 	obj.display();
 	cout<<"\n--------------------------------------------------\n";
 	system("pause");*/
-	return 0;
 }
