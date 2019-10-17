@@ -1,4 +1,5 @@
-// Recursive program to check if a given linked list is palindrome 
+//11
+//Recursive program to check if a given linked list is palindrome 
 #include <stdbool.h> 
 #include <stdio.h> 
 #include <stdlib.h> 
